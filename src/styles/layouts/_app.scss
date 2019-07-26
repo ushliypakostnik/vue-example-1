@@ -1,25 +1,3 @@
 .app {
-  &__wrapper {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  &__form {
-    margin-top: -15%;
-
-    input {
-      color: $color_text;
-      border-color: $color_gray;
-      text-align: center;
-      @include text($font-family_sans, $font-size_xsmall, $font-weight_sans_regular);
-    }
-
-    p {
-      color: $color_text;
-      height: $line-height_small;
-    }
-  }
+  ////////
 }

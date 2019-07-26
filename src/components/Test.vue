@@ -1,27 +1,44 @@
 <template>
-  <div class="app__wrapper">
-    <form class="app__form">
-      <img src="../assets/logo.png" width="70px">
-      <h1 class="app__header">Vue cli based frontend boilerplate</h1>
-      <input
-        id="input"
-        v-model="input"
-        type="text"
-        name="input"
+  <div>
+    <v-menu
+        ref="menu"
+        v-model="menu"
+        :close-on-content-click="false"
+        :return-value.sync="date"
+        transition="scale-transition"
+        offset-y
+        full-width
+        min-width="290px"
       >
-      <h3>V-MODEL test:</h3>
-      <p>{{ input }}</p>
-    </form>
+      <template v-slot:activator="{ on }">
+        <v-btn
+          v-model="date"
+          v-on="on"
+        >
+          <Icon icon-name="write"><DatapickerIcon /></Icon> Июль
+        </v-btn>
+      </template>
+      <v-date-picker no-title
+        v-model="date" />
+    </v-menu>
   </div>
 </template>
 
 <script>
+import Icon from './icons/Icon';
+import DatapickerIcon from './icons/DatapickerIcon';
+
 export default {
   name: 'Test',
 
+  components: {
+    Icon,
+    DatapickerIcon,
+  },
+
   data() {
     return {
-      input: null,
+      picker: new Date().toISOString().substr(0, 10),
     };
   },
   methods: {

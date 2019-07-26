@@ -1,6 +1,18 @@
+/*
 import Vue from 'vue';
+import Vuetify from 'vuetify';
+import App from '@/App';
 
-import App from '@/components/App';
+// mock component
+const routerView = {
+  name: 'router-view',
+  render: h => h('div'),
+};
+
+// register mock component
+Vue.component('router-view', routerView);
+
+Vue.use(Vuetify);
 
 describe('App.vue', () => {
   it('should render correct contents', () => {
@@ -10,3 +22,4 @@ describe('App.vue', () => {
       .toEqual('Vue cli based frontend boilerplate');
   });
 });
+*/
