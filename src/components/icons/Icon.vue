@@ -1,8 +1,9 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg"
+    class="icon"
     :width="width"
     :height="height"
-    viewBox="0 0 18 18"
+    :viewBox="viewBox"
     :aria-labelledby="iconName"
     role="presentation"
   >
@@ -10,7 +11,7 @@
       :id="iconName"
       lang="en"
     >{{iconName}} icon</title>
-    <g :fill="iconColor">
+    <g :fill="fill">
       <slot />
     </g>
   </svg>
@@ -36,6 +37,16 @@ export default {
     iconColor: {
       type: String,
       default: 'currentColor',
+    },
+    fill: {
+      type: String,
+      default: 'currentColor',
+    },
+  },
+
+  computed: {
+    viewBox() {
+      return `0 0 ${this.width} ${this.height}`;
     },
   },
 };

@@ -32,22 +32,15 @@ $color_danger: $color_red;
 $color_warning: $color_orange;
 $color_success: $color_green;
 
-// Special
-
-$color_light: #f3f3f4;
-
-$color_dark: #2f4050;
-
-$color_dark_alfa: rgba($color_dark, 0.66);
-
 // Text
 
-$color_text: #575757;
+$color_text: #2e2e2e;
+$color_text_light: fade-out($color_text, 0.6);
 
 // Links
 
-$color_link: #557aa7;
-$color_link-hover: #44529c;
+$color_link: $color_text;
+$color_link-hover: $color_text;
 
 // Shadows
 
@@ -60,17 +53,16 @@ $color_fb: #3b5998;
 
 // Functional
 
-$color_disabled: darken($color_light, ($fade * 4)); // #9e9ea6
+$color_disabled: $color_text_light;
 $color_placeholder: $color_disabled;
 
-$color_background: #f1f3f6;
-$color_background_light: #fbf8f3;
-
-$color_background_dark-theme: #263238;
+$color_background: #f5f5f5;
+$color_background_light: #f8f8f8;
+$color_background_dark: #eeeeee;
 
 // Borders
 
-$color_border: $color_gray;
+$color_border: #dcdcdc;
 
 
 // Effects
@@ -157,10 +149,9 @@ $container_lg:                 ($content-container_lg + $size);
 
 // Roundings
 
-$border-radius_base: 0;
-$border-radius_xsmall: 3px;
-$border-radius_small: 4px;
-$border-radius_large: 6px;
+$border-radius_small: 10px;
+$border-radius_normal: 18px;
+$border-radius_large: 32px;
 
 // Buttons
 

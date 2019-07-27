@@ -12,7 +12,7 @@ body {
   margin: 0;
   height: 100%;
   color: $color_text;
-  background: $color_white;
+  background: $color_background_light;
   padding: 0;
   quotes: "\00ab" "\00bb";
 
@@ -29,6 +29,16 @@ a {
   &:hover {
     color: $color_link-hover;
   }
+}
+
+hr {
+  background: $color_border;
+  opacity: 0.4;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 // stylelint-disable no-descending-specificity
@@ -88,7 +98,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 
-hr {
+hr { // stylelint-disable-line no-duplicate-selectors
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */

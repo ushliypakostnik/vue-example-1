@@ -1,17 +1,17 @@
 <template>
-  <v-app id="app" class="app">
-    <Test />
+  <v-app id="app">
+    <Layout />
   </v-app>
 </template>
 
 <script>
-import Test from './Test';
+import Layout from './Layout';
 
 export default {
   name: 'App',
 
   components: {
-    Test,
+    Layout,
   },
 };
 </script>

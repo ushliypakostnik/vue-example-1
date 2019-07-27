@@ -15,7 +15,7 @@
           v-model="date"
           v-on="on"
         >
-          <Icon icon-name="write"><DatapickerIcon /></Icon> Июль
+          <Icon icon-name="datapicker"><DatapickerIcon /></Icon> Июль
         </v-btn>
       </template>
       <v-date-picker no-title
@@ -36,11 +36,10 @@ export default {
     DatapickerIcon,
   },
 
-  data() {
-    return {
-      picker: new Date().toISOString().substr(0, 10),
-    };
-  },
+  data: () => ({
+    picker: new Date().toISOString().substr(0, 10),
+  }),
+
   methods: {
   },
 };
