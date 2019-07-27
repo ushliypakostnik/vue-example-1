@@ -59,6 +59,7 @@ $color_placeholder: $color_disabled;
 $color_background: #f5f5f5;
 $color_background_light: #f8f8f8;
 $color_background_dark: #eeeeee;
+$color_background_darken: #eaeaea;
 
 // Borders
 
@@ -149,7 +150,7 @@ $container_lg:                 ($content-container_lg + $size);
 
 // Roundings
 
-$border-radius_small: 10px;
+$border-radius_small: 14px;
 $border-radius_normal: 18px;
 $border-radius_large: 32px;
 

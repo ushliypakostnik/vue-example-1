@@ -65,6 +65,30 @@
         </div>
       </div>
       <AsideMenu :items="menuitems" />
+      <div class="aside__bottom">
+        <v-avatar size="40px" class="aside__avatar">
+          <img
+            :src="user.ava"
+            alt="Avatar"
+          >
+        </v-avatar>
+        <div class="aside__username">{{ user.name }}</div>
+        <div class="aside__company">{{ user.company }}</div>
+        <a href="#" class="aside__control1">
+          <Icon
+            width="16"
+            height="16">
+            <Icon2 />
+          </Icon>
+        </a>
+        <a href="#" class="aside__control2">
+          <Icon
+            width="16"
+            height="16">
+            <InfoIcon />
+          </Icon>
+        </a>
+      </div>
     </div>
   </aside>
 </template>
@@ -75,6 +99,8 @@ import AsideMenu from './AsideMenu';
 import Icon from '../icons/Icon';
 import Icon1 from '../icons/aside/Icon1';
 import LogoIcon from '../icons/aside/LogoIcon';
+import Icon2 from '../icons/aside/Icon2';
+import InfoIcon from '../icons/aside/InfoIcon';
 
 export default {
   name: 'Aside',
@@ -85,16 +111,19 @@ export default {
     Icon1,
     LogoIcon,
     AsideMenu,
+    Icon2,
+    InfoIcon,
   },
 
   data: () => ({
     values: [1930545.26, 1345511.26, 8797.41, 569156.26, 541356.47, 8797.41, 671099.11],
     menuitems: ['Операции', 'Отчеты', 'Контрагенты', 'Проекты', 'Статьи расходов', 'Сотрудники'],
+    user: {
+      name: 'Андрей Никонов',
+      ava: 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
+      company: 'Riverstart Digital',
+    },
   }),
-
-  methods: {
-
-  },
 };
 </script>
 
@@ -121,8 +150,8 @@ export default {
   &__logo {
     text-align: center;
     position: absolute;
-    top: 22px;
-    right: 13px;
+    top: 21px;
+    right: 19px;
     @include text($font-family_sans, 10px, $font-weight_sans_bold);
     line-height: 7px;
 
@@ -135,6 +164,7 @@ export default {
     margin-top: 14px;
     background: $color_background_dark;
     border-radius: $border-radius_normal;
+    @include size(240px, 176px);
   }
 
   &__part {
@@ -170,9 +200,9 @@ export default {
   }
 
   &__string {
+    margin-bottom: 5px;
     @include text($font-family_sans, $font-size_xsmall, $font-weight_sans_regular);
     letter-spacing: -0.01em;
-    margin-bottom: 5px;
 
     .number {
       float: right;
@@ -182,6 +212,76 @@ export default {
   &__label {
     color: $color_text_light;
     letter-spacing: -0.01em;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 18px;
+    padding-left: 80px;
+    padding-right: 60px;
+    background: $color_background_dark;
+    border-top-left-radius: $border-radius_large;
+    border-bottom-left-radius: $border-radius_large;
+    @include size(100%, 86px);
+  }
+
+  &__avatar {
+    position: absolute;
+    top: 19px;
+    left: 25px;
+  }
+
+  &__username {
+    margin-bottom: 2px;
+    white-space: nowrap;
+    @include text($font-family_sans, round($font-size_small * 1.1), $font-weight_sans_semibold);
+    line-height: 19px;
+    letter-spacing: -0.01em;
+  }
+
+  &__company {
+    white-space: nowrap;
+    opacity: 0.5;
+    @include text($font-family_sans, round($font-size_small * 1.1), $font-weight_sans_regular);
+    line-height: 19px;
+    letter-spacing: -0.01em;
+  }
+
+  &__control1,
+  &__control2 {
+    position: absolute;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    @include size(16px, 16px);
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__control1 {
+    top: 15px;
+    right: 30px;
+  }
+
+  &__control2 {
+    top: 47px;
+    right: 31px;
+
+    // fix icon
+    border: 2px solid #2e2e2e;
+    border-radius: 50%;
+
+    svg {
+      position: relative;
+      top: -5px;
+      left: -2px;
+    }
   }
 }
 </style>

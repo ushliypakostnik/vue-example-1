@@ -1,10 +1,12 @@
 <template>
-  <ul>
-    <li
-      v-for="item in items"
-      v-bind:key="item.id"
-    >{{ item.price }}</li>
-  </ul>
+  <main role="main">
+    <ul>
+      <li
+        v-for="item in items"
+        v-bind:key="item.id"
+      >{{ item.price }}</li>
+    </ul>
+  </main>
 </template>
 
 <script>

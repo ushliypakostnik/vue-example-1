@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_stylebase.scss';
 
-$aside-width: 337px;
+$aside-width: 347px;
 
 .page {
   padding-right: $aside-width;

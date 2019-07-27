@@ -24,7 +24,6 @@ export default {
   props: {
     iconName: {
       type: String,
-      default: 'box',
     },
     width: {
       type: [Number, String],

@@ -2,12 +2,13 @@
   <ul role="menu">
     <li
       v-for="item in items"
-      v-bind:key="item.id">
+      :key="item.id"
+      :class="{'--active' : item === activeItem }">
       <a href="#">
         <Icon
-          icon-name="logo"
-          width="26"
-          height="26">
+          :icon-name="item"
+          width="16"
+          height="16">
           <OperationIcon v-if="item === 'Операции'" />
           <ReportsIcon v-else-if="item === 'Отчеты'" />
           <KontragentsIcon v-else-if="item === 'Контрагенты'" />
@@ -37,6 +38,10 @@ export default {
     items: Array,
   },
 
+  data: () => ({
+    activeItem: 'Операции',
+  }),
+
   components: {
     Icon,
     OperationIcon,
@@ -53,11 +58,21 @@ export default {
 @import '../../styles/_stylebase.scss';
 
 ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-top: 25px;
 
   > li {
     padding: 9px 23px 9px 13px;
     margin-bottom: 12px;
+    border-radius: $border-radius_small;
+
+    &.--active {
+      background: $color_background_darken;
+
+      a { pointer-events: none; }
+    }
 
     a {
       position: relative;
@@ -70,6 +85,12 @@ ul {
         position: absolute;
         top: 6px;
         left: 0;
+      }
+    }
+
+    &:nth-of-type(5) {
+      a .icon {
+        top: 8px;
       }
     }
   }
