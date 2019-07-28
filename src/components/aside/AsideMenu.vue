@@ -1,28 +1,32 @@
 <template>
   <ul role="menu">
     <li
-      v-for="item in items"
-      :key="item.id"
-      :class="{'--active' : item === activeItem }">
-      <a href="#">
+      v-for="page in pages"
+      :key="page.id"
+      :class="{'--active' : page.item === activePage }">
+      <router-link
+        :to="`/${page.item}`"
+        @click.prevent.native="click(page)">
         <Icon
-          :icon-name="item"
+          :icon-name="page.name"
           width="16"
           height="16">
-          <OperationIcon v-if="item === 'Операции'" />
-          <ReportsIcon v-else-if="item === 'Отчеты'" />
-          <KontragentsIcon v-else-if="item === 'Контрагенты'" />
-          <ProjectsIcon v-else-if="item === 'Проекты'" />
-          <StatsIcon v-else-if="item === 'Статьи расходов'" />
-          <EmployeesIcon v-else-if="item === 'Сотрудники'" />
+          <OperationIcon v-if="page.item === items[0]" />
+          <ReportsIcon v-else-if="page.item === items[1]" />
+          <KontragentsIcon v-else-if="page.item === items[2]" />
+          <ProjectsIcon v-else-if="page.item === items[3]" />
+          <StatsIcon v-else-if="page.item === items[4]" />
+          <EmployeesIcon v-else-if="page.item === items[5]" />
         </Icon>
-        {{ item }}
-      </a>
+        {{ page.name }}
+      </router-link>
     </li>
   </ul>
 </template>
 
 <script>
+import DATA from '../../config';
+
 import Icon from '../icons/Icon';
 import OperationIcon from '../icons/aside/OperationIcon';
 import ReportsIcon from '../icons/aside/ReportsIcon';
@@ -35,11 +39,11 @@ export default {
   name: 'AsideMenu',
 
   props: {
-    items: Array,
+    pages: Array,
   },
 
   data: () => ({
-    activeItem: 'Операции',
+    activePage: DATA.pages[0].item,
   }),
 
   components: {
@@ -50,6 +54,28 @@ export default {
     ProjectsIcon,
     StatsIcon,
     EmployeesIcon,
+  },
+
+  computed: {
+    items() {
+      const items = [];
+      // eslint-disable-next-line arrow-body-style
+      this.pages.map((item) => {
+        return items.push(item.item);
+      });
+      return items;
+    },
+  },
+
+  methods: {
+    click(page) {
+      this.activePage = page.item;
+      /* if (this.activePage === 1) {
+        this.$router.push('operations');
+      } else {
+        this.$router.push('others');
+      } */
+    },
   },
 };
 </script>

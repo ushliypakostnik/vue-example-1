@@ -64,7 +64,7 @@
           </div>
         </div>
       </div>
-      <AsideMenu :items="menuitems" />
+      <AsideMenu :pages="pages" />
       <div class="aside__bottom">
         <v-avatar size="40px" class="aside__avatar">
           <img
@@ -94,7 +94,9 @@
 </template>
 
 <script>
-import Number from './Number';
+import DATA from '../../config';
+
+import Number from '../utils/Number';
 import AsideMenu from './AsideMenu';
 import Icon from '../icons/Icon';
 import Icon1 from '../icons/aside/Icon1';
@@ -116,13 +118,9 @@ export default {
   },
 
   data: () => ({
-    values: [1930545.26, 1345511.26, 8797.41, 569156.26, 541356.47, 8797.41, 671099.11],
-    menuitems: ['Операции', 'Отчеты', 'Контрагенты', 'Проекты', 'Статьи расходов', 'Сотрудники'],
-    user: {
-      name: 'Андрей Никонов',
-      ava: 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
-      company: 'Riverstart Digital',
-    },
+    values: DATA.user.data.values,
+    pages: DATA.pages,
+    user: DATA.user,
   }),
 };
 </script>

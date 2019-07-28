@@ -1,20 +1,25 @@
 <template>
-  <div class="page">
-    <Feed class="page__content" />
-    <Aside class="page__aside" />
+  <div>
+    <div class="page">
+      <main class="page__content" role="main">
+        <router-view />
+      </main>
+      <Aside class="page__aside" />
+    </div>
+    <Legacy class="legacy" text="Gadget amd mobile views under construction" />
   </div>
 </template>
 
 <script>
-import Feed from './feed/Feed';
 import Aside from './aside/Aside';
+import Legacy from './utils/Legacy';
 
 export default {
-  name: 'Lauout',
+  name: 'App',
 
   components: {
-    Feed,
     Aside,
+    Legacy,
   },
 };
 </script>
@@ -38,5 +43,17 @@ $aside-width: 347px;
     position: fixed;
     @include size($aside-width, 100vh);
   }
+
+  @include not-xl {
+    display: none !important; // rewrite component scoped
+  }
+}
+
+.legacy {
+  @include xl {
+    display: none !important; // rewrite component scoped
+  }
 }
 </style>
+
+<style src="../styles/_stylebase.scss" lang="scss"></style>

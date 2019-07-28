@@ -43,6 +43,14 @@ ul {
 
 // stylelint-disable no-descending-specificity
 
+// Placeholders
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: $color_placeholder;
+}
+
 // Кнопки
 button,
 input,

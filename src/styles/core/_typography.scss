@@ -77,17 +77,17 @@ a {
 // Обычный параграф
 p {
   color: $color_text;
-  margin-bottom: $size;
+  margin-bottom: $size / 2;
   @include text($font-family_sans, $font-size_xsmall, $font-weight_sans_regular);
 }
 
 // Заголовки по умолчанию
 
 h1 {
-  @include text($font-family_sans, $font-size_large, $font-weight_sans_light);
+  @include text($font-family_sans, $font-size_large, $font-weight_sans_extrabold);
 
   @include xs {
-    @include text($font-family_sans, $font-size_normal, $font-weight_sans_light);
+    @include text($font-family_sans, $font-size_normal, $font-weight_sans_extrabold);
   }
 }
 

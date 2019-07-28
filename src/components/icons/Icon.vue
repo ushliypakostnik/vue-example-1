@@ -10,7 +10,7 @@
     <title
       :id="iconName"
       lang="en"
-    >{{iconName}} icon</title>
+    >{{iconName}}</title>
     <g :fill="fill">
       <slot />
     </g>

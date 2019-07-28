@@ -1,0 +1,57 @@
+// Vyetify customizations
+//////////////////////////////////////////////////////
+
+// stylelint-disable
+
+.operation {
+  .v-input,
+  .v-text-field,
+  .v-select,
+  .v-autocomplete {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 18px;
+  }
+
+  .v-input__control {
+    flex-grow: 0;
+    width: auto;
+    height: 18px;
+  }
+
+  .v-input__slot {
+    margin: 0;
+    height: 18px;
+    border-color: transparent !important;
+    color: transparent !important;
+    caret-color: transparent !important;
+  }
+
+  .v-select__slot {
+    height: 18px;
+    width: auto;
+  }
+
+  .v-autocomplete:not(.v-input--is-disabled).v-select.v-text-field input {
+    padding: 0;
+    @include text($font-family_sans, $font-size_small, $font-weight_sans_regular);
+    letter-spacing: -0.01em;
+  }
+
+  .v-text-field .v-input__append-inner {
+    display: none;
+  }
+
+  .v-text-field > .v-input__control > .v-input__slot:before {
+      border: none;
+  }
+
+  .primary--text {
+    color: transparent !important;
+    caret-color: transparent !important;
+  }
+}
+
+// stylelint-enable
+

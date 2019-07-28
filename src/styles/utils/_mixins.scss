@@ -7,6 +7,18 @@
 //////////////////////////////////////////////////////
 // Брекпоинты - смотреть в _variables.scss
 
+@mixin xl {
+  @media (min-width: $breackpoint_xl) {
+    @content;
+  }
+}
+
+@mixin not-xl {
+  @media (max-width: $breackpoint_lg_max) {
+    @content;
+  }
+}
+
 @mixin lg {
   @media (min-width: $breackpoint_lg) {
     @content;
@@ -64,6 +76,12 @@
 @mixin size($width, $height) {
   width: $width;
   height: $height;
+}
+
+// Good width flex
+@mixin steel-flex($width) {
+  min-width: $width;
+  max-width: $width;
 }
 
 

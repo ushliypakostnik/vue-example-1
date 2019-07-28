@@ -20,8 +20,8 @@ export default {
     },
 
     afterzero() {
-      const string = String(this.value).split('.');
-      return `,${string[1]}`;
+      const string = String(this.value).split('.')[1] || '00';
+      return `,${string}`;
     },
   },
 };
