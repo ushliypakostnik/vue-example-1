@@ -70,11 +70,6 @@ export default {
   methods: {
     click(page) {
       this.activePage = page.item;
-      /* if (this.activePage === 1) {
-        this.$router.push('operations');
-      } else {
-        this.$router.push('others');
-      } */
     },
   },
 };
